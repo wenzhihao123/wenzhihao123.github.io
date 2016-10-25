@@ -1,0 +1,548 @@
+<!doctype html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.0.1" />
+
+
+
+
+
+
+<meta name="description" content="引语：最近闲暇时间在研究算法，记录下，防止遗忘！">
+<meta property="og:type" content="article">
+<meta property="og:title" content="常遇到的算法总结（java版）">
+<meta property="og:url" content="http://yoursite.com/2016/10/20/算法/index.html">
+<meta property="og:site_name" content="wenzhihao">
+<meta property="og:description" content="引语：最近闲暇时间在研究算法，记录下，防止遗忘！">
+<meta property="og:updated_time" content="2016-10-25T02:13:31.790Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="常遇到的算法总结（java版）">
+<meta name="twitter:description" content="引语：最近闲暇时间在研究算法，记录下，防止遗忘！">
+
+
+
+<script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: '博主'
+    }
+  };
+</script>
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/10/20/算法/"/>
+
+  <title> 常遇到的算法总结（java版） | wenzhihao </title>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-meta ">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/"  class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <span class="site-title">wenzhihao</span>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle">Android dev,BEIJING</p>
+</div>
+
+<div class="site-nav-toggle">
+  <button>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+    <span class="btn-bar"></span>
+  </button>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            标签
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                常遇到的算法总结（java版）
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-10-20T14:38:55+08:00" content="2016-10-20">
+              2016-10-20
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>引语：最近闲暇时间在研究算法，记录下，防止遗忘！ <a id="more"></a></p>
+<h3 id="1、在一个数组中，找出出现次数最多的一个数并输出"><a href="#1、在一个数组中，找出出现次数最多的一个数并输出" class="headerlink" title="1、在一个数组中，找出出现次数最多的一个数并输出"></a>1、在一个数组中，找出出现次数最多的一个数并输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @param arr</div><div class="line">* HashMap的key存出现的数字，value存数字出现的次数，找到出现次数最多的次数的key就是最大数字</div><div class="line">*/</div><div class="line">public  static void getMaxCount(int arr[])&#123;</div><div class="line">	HashMap&lt;Integer, Integer&gt; map = new HashMap&lt;&gt;();</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		if (map.containsKey(arr[i])) &#123;</div><div class="line">			int temp = map.get(arr[i]);</div><div class="line">			map.put(arr[i], temp+1);</div><div class="line">		&#125;else &#123;</div><div class="line">			map.put(arr[i], 1);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	Collection&lt;Integer&gt; values = map.values();</div><div class="line">	int maxValue = Collections.max(values);</div><div class="line">	int maxNumber = 0 ;</div><div class="line">	for (Map.Entry&lt;Integer, Integer&gt; entry : map.entrySet()) &#123;</div><div class="line">		if (maxValue==entry.getKey()) &#123;</div><div class="line">			maxNumber = entry.getKey();</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">    			</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。"><a href="#2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。" class="headerlink" title="2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。"></a>2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @param arr</div><div class="line">* 这个算法和第一题的算法思想类似，只要找到重复key就找到了重复的数字</div><div class="line">*/</div><div class="line">public  static int getRenumCount(int arr[])&#123;</div><div class="line">	HashSet&lt;Integer&gt; set = new HashSet&lt;&gt;();</div><div class="line">	int num = -1 ;</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		if (set.contains(arr[i])) &#123;</div><div class="line">			num = arr[i];</div><div class="line">			break ;</div><div class="line">		&#125;else &#123;</div><div class="line">			set.add(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return num;</div><div class="line">    			</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O-1-时间复杂度是：O-N"><a href="#3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O-1-时间复杂度是：O-N" class="headerlink" title="3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O(1),时间复杂度是：O(N)"></a>3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O(1),时间复杂度是：O(N)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @param arr</div><div class="line">* 主要思路就是通过遍历List集合,把负数每次都移除掉，再插入到首位</div><div class="line">* add()之后其他元素会后移一位</div><div class="line">*/</div><div class="line">public  static void getNPNumber(int arr[])&#123;</div><div class="line">	ArrayList&lt;Integer&gt; list = new ArrayList&lt;&gt;();</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		list.add(arr[i]);</div><div class="line">	&#125;</div><div class="line">	int temp = 0 ;</div><div class="line">	for (int i = 0; i &lt; list.size(); i++) &#123;</div><div class="line">		if (list.get(i)&lt;0) &#123;</div><div class="line">			temp = list.get(i) ;</div><div class="line">			list.remove(i);</div><div class="line">			list.add(0, temp);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for (int i = 0; i &lt; list.size(); i++) &#123;</div><div class="line">		System.out.print(&quot; &quot;+list.get(i)+&quot; &quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="4、求一个数组的最大连续子序列和-要求时间复杂度是O-N"><a href="#4、求一个数组的最大连续子序列和-要求时间复杂度是O-N" class="headerlink" title="4、求一个数组的最大连续子序列和,要求时间复杂度是O(N)"></a>4、求一个数组的最大连续子序列和,要求时间复杂度是O(N)</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* @param arr</div><div class="line">* 思路主要是，申明一个零时和curSum，一个实际和maxSum，遍历这个数组，当为负数的时候把临时的和置为0，如果curSum &gt; maxSum就赋值，直到遍历结束</div><div class="line">*/</div><div class="line">public static Integer findMaxSum(int[] arr) &#123;</div><div class="line">	int curSum = 0;</div><div class="line">	int maxSum = 0;</div><div class="line">	int len = arr.length;</div><div class="line"></div><div class="line">	if (arr == null || len == 0) &#123;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line">	for (int i = 0; i &lt; len; i++) &#123;</div><div class="line">		curSum += arr[i];</div><div class="line">		if (curSum &lt; 0) &#123;</div><div class="line">			curSum = 0;</div><div class="line">		&#125;</div><div class="line">		if (curSum &gt; maxSum) &#123;</div><div class="line">			maxSum = curSum;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	//都是负数的情况</div><div class="line">	if (maxSum == 0) &#123;</div><div class="line">		for (int i = 0; i &lt; len; i++) &#123;</div><div class="line">			if (i == 0) &#123;</div><div class="line">				maxSum = arr[i];</div><div class="line">			&#125;</div><div class="line">			if (arr[i] &gt; maxSum) &#123;</div><div class="line">				maxSum = arr[i];</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return maxSum;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="5、寻找一个字符串中最长的重复子串，如“abcabcef”-输出“abc”"><a href="#5、寻找一个字符串中最长的重复子串，如“abcabcef”-输出“abc”" class="headerlink" title="5、寻找一个字符串中最长的重复子串，如“abcabcef”,输出“abc”."></a>5、寻找一个字符串中最长的重复子串，如“abcabcef”,输出“abc”.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 寻找一个字符串中最长的重复子串</div><div class="line">* @param s</div><div class="line">* @return</div><div class="line">*/</div><div class="line">public String findStr(String s)&#123;</div><div class="line">	if(s==null)&#123;</div><div class="line">		return null;</div><div class="line">	&#125;</div><div class="line">	//最长重复子串的长度</div><div class="line">	int max=0;</div><div class="line">	//最长重复子串的第一个字符在s中的下标</div><div class="line">	int first=0;</div><div class="line">	String res = null;</div><div class="line">	//i为每次循环设定的字符串比较间隔：1,2，...，s.length()-1</div><div class="line">	for(int i=1;i&lt;s.length();i++)&#123;</div><div class="line">		for(int k=0,j=0;j&lt;s.length()-i;j++)&#123;</div><div class="line">			if(s.charAt(j)==s.charAt(j+i))</div><div class="line">				k++;</div><div class="line">			else</div><div class="line">				k=0;</div><div class="line">			if(k&gt;max)&#123;</div><div class="line">				max=k;</div><div class="line">				first=j-max+1;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if(max&gt;0)&#123;</div><div class="line">			res = s.substring(first, first+max);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return res;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="6、冒泡排序算法"><a href="#6、冒泡排序算法" class="headerlink" title="6、冒泡排序算法."></a>6、冒泡排序算法.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 冒泡排序算法</div><div class="line">* 思想：是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。</div><div class="line">* 走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。</div><div class="line">* </div><div class="line">*算法规则：由于算法每次都将一个最大的元素往上冒，我们可以将待排序集合(0...n)看成两部分，一部分为(k..n)的待排序unsorted集合，</div><div class="line">* 另一部分为(0...k)的已排序sorted集合，每一次都在unsorted集合从前往后遍历，选出一个数，如果这个数比其后面的数大，</div><div class="line">* 则进行交换。完成一轮之后，就肯定能将这一轮unsorted集合中最大的数移动到集合的最后，并且将这个数从unsorted中删除，移入sorted中。</div><div class="line">*/</div><div class="line">public void bubleSort(int arr[ ])&#123;</div><div class="line">	int temp = 0 ;</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		for (int j = i+1; j &lt; arr.length; j++) &#123;</div><div class="line">			if (arr[i]&gt;arr[j]) &#123;</div><div class="line">				temp = arr[i];</div><div class="line">				arr[i] = arr[j];</div><div class="line">				arr[j] = temp ;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="7、选择排序算法"><a href="#7、选择排序算法" class="headerlink" title="7、选择排序算法."></a>7、选择排序算法.</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div></pre></td><td class="code"><pre><div class="line">/**</div><div class="line">* 选择排序</div><div class="line">* 思想：首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，</div><div class="line">* 然后，再从剩余未排序元素中继续寻找选择排序最小（大）元素，然后放到已排序序列的末尾。</div><div class="line">* 以此类推，直到所有元素均排序完毕。</div><div class="line">* </div><div class="line">* 算法规则： 将待排序集合(0...n)看成两部分，在起始状态中，一部分为(k..n)的待排序unsorted集合，</div><div class="line">* 另一部分为(0...k)的已排序sorted集合,在待排序集合中挑选出最小元素并且记录下标i，</div><div class="line">* 若该下标不等于k，那么 unsorted[i] 与 sorted[k]交换 ，一直重复这个过程，直到unsorted集合中元素为空为止。</div><div class="line">* </div><div class="line">* 此类时间复杂度为O（n`2）</div><div class="line">*/</div><div class="line">public void selectSort(int arr[ ])&#123;</div><div class="line">	int temp = 0 ;</div><div class="line">	for (int i = 0,k=0; i &lt; arr.length; i++,k=i ) &#123;</div><div class="line">		for (int j = i+1; j &lt; arr.length; j++) &#123;</div><div class="line">			if(arr[k]&lt;arr[j])&#123;</div><div class="line">				k = j ;</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">		if (k!=i) &#123;</div><div class="line">			temp = arr [i];</div><div class="line">			arr[i] = arr[k] ;</div><div class="line">			arr[k] = temp;</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	for (int i = 0; i &lt; arr.length; i++) &#123;</div><div class="line">		System.out.print(arr[i]+&quot;  &quot;);</div><div class="line">	&#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/15/My-first-blog/" rel="next" title="一字洞悉天下，一语道破天机">
+                <i class="fa fa-chevron-left"></i> 一字洞悉天下，一语道破天机
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel ">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.jpg"
+               alt="wenzhihao" />
+          <p class="site-author-name" itemprop="name">wenzhihao</p>
+          <p class="site-description motion-element" itemprop="description"></p>
+        </div>
+        <nav class="site-state motion-element">
+          <div class="site-state-item site-state-posts">
+            <a href="/archives">
+              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-name">日志</span>
+            </a>
+          </div>
+
+          
+
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+      </section>
+
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1、在一个数组中，找出出现次数最多的一个数并输出"><span class="nav-number">1.</span> <span class="nav-text">1、在一个数组中，找出出现次数最多的一个数并输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。"><span class="nav-number">2.</span> <span class="nav-text">2、有一个长度为100数组，里面的数字从0到99，其中有2个数字重复，请找出重复的那个数。</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O-1-时间复杂度是：O-N"><span class="nav-number">3.</span> <span class="nav-text">3、有一个整数数组，有负数和整数，用一个方法把正负数分开，要求空间复杂度是O(1),时间复杂度是：O(N)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4、求一个数组的最大连续子序列和-要求时间复杂度是O-N"><span class="nav-number">4.</span> <span class="nav-text">4、求一个数组的最大连续子序列和,要求时间复杂度是O(N)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5、寻找一个字符串中最长的重复子串，如“abcabcef”-输出“abc”"><span class="nav-number">5.</span> <span class="nav-text">5、寻找一个字符串中最长的重复子串，如“abcabcef”,输出“abc”.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6、冒泡排序算法"><span class="nav-number">6.</span> <span class="nav-text">6、冒泡排序算法.</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7、选择排序算法"><span class="nav-number">7.</span> <span class="nav-text">7、选择排序算法.</span></a></li></ol></div>
+            
+          </div>
+        </section>
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2016</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">wenzhihao</span>
+</div>
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+        
+
+        
+      </div>
+    </footer>
+
+    <div class="back-to-top">
+      <i class="fa fa-arrow-up"></i>
+    </div>
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.0.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.0.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.0.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
